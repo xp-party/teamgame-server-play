@@ -12,5 +12,8 @@ GET     /favicon.ico                            404
 GET     /public/                                staticDir:public
 
 # Catch all
-*       /{controller}/{action}                  {controller}.{action}
 GET     /hello                                  Application.sayHello
+WS      /socket/listen                          Application.WebSocket.listen
+GET      /socket/post                            Application.WebSocket.postMessage
+*       /{controller}/{action}                  {controller}.{action}
+

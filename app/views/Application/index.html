@@ -10,4 +10,29 @@
 <form action="@{Application.sayHello()}" method="GET">
     <input type="text" name="myName"/>
     <input type="submit" value="Say hello!"/>
-</form> 
+</form>
+
+
+
+<div id="socketout"></div>
+<script type="text/javascript">
+    // Create a socket
+    var socket = new WebSocket('@@{Application.WebSocket.listen()}');
+
+    socket.onopen = function () {
+        alert("Соединение открылось");
+    };
+    socket.onclose = function () {
+        alert("Соединение закрылось");
+    };
+
+//    Message received on the socket
+    socket.onmessage = function (event)
+    {
+        $('#socketout').append(event.data + "<br />");
+    };
+
+//    socket.onopen = function () {
+//        socket.send("AAAAAAAAAAAAAAAAAAAAAAAA");
+//    };
+</script>
