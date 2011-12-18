@@ -21,6 +21,7 @@
 
     socket.onopen = function () {
         alert("Соединение открылось");
+        socket.send("Opened!!!");
     };
     socket.onclose = function () {
         alert("Соединение закрылось");
@@ -30,9 +31,10 @@
     socket.onmessage = function (event)
     {
         $('#socketout').append(event.data + "<br />");
+//        socket.send("aaaaa");
     };
 
-//    socket.onopen = function () {
-//        socket.send("AAAAAAAAAAAAAAAAAAAAAAAA");
+//    document.onmouseup = function () {
+//        socket.send("Clicked!!!!!!");
 //    };
 </script>
