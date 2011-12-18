@@ -22,6 +22,11 @@ public class Application extends Controller {
     	render(myName);
     }
 
+    public static void giveMyTeam() {
+        Integer playerNumber = 1;
+        render(playerNumber);
+    }
+
     public static class WebSocket extends WebSocketController
     {
         public static void listen() {

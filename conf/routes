@@ -15,5 +15,6 @@ GET     /public/                                staticDir:public
 GET     /hello                                  Application.sayHello
 WS      /socket/listen                          Application.WebSocket.listen
 GET     /socket/post                            Application.WebSocket.postMessage
+GET     /giveMyTeam                             Application.giveMyTeam
 *       /{controller}/{action}                  {controller}.{action}
 
