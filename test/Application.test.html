@@ -35,4 +35,8 @@ assertTextPresent('{"teamId": "team0", "playerNumber": 1}')
 open('/giveMyTeam?userName=player2')
 assertTextPresent('{"teamId": "team0", "playerNumber": 2}')
 
+// adding of the same player should return his old playerNumber
+open('/giveMyTeam?userName=player1')
+assertTextPresent('{"teamId": "team0", "playerNumber": 1}')
+
 #{/selenium}
