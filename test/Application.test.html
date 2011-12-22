@@ -2,29 +2,37 @@
 
 #{selenium}
 // Open the home page, and check that no error occured
-open('/')
-assertNotTitle('Application error')
+// open('/')
+// assertNotTitle('Application error')
 
 // Check that it is the Hello World application
-assertTextPresent('The Hello world app.')
+// assertTextPresent('The Hello world app.')
 
 // Submit the form
-clickAndWait('css=input[type=submit]')
+// clickAndWait('css=input[type=submit]')
 
 // Check the error
-assertTextPresent('Oops, please enter your name, Man!!!')
+// assertTextPresent('Oops, please enter your name, Man!!!')
 
 // Type the name and submit
-type('css=input[type=text]', 'bob')
-clickAndWait('css=input[type=submit]')
+// type('css=input[type=text]', 'bob')
+// clickAndWait('css=input[type=submit]')
 
 // Check the result
-assertTextPresent('Hello bob!')
-assertTextPresent('The Hello world app.')
+// assertTextPresent('Hello bob!')
+// assertTextPresent('The Hello world app.')
 
 // Check the back link
-clickAndWait('link=Back to form')
+// clickAndWait('link=Back to form')
 
 // Home page?
-assertTextNotPresent('Hello bob!')
+// assertTextNotPresent('Hello bob!')
+
+
+open('/giveMyTeam?userName=player1')
+assertTextPresent('1')
+
+open('/giveMyTeam?userName=player2')
+assertTextPresent('2')
+
 #{/selenium}

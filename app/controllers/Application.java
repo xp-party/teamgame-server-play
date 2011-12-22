@@ -1,6 +1,8 @@
 package controllers;
 
 import models.StatefulModel;
+import models.domain.Player;
+import models.domain.Team;
 import play.Logger;
 import play.data.validation.Required;
 import play.data.validation.Validation;
@@ -9,6 +11,9 @@ import play.mvc.Http;
 import play.mvc.WebSocketController;
 
 public class Application extends Controller {
+
+    private static final int SIMPLAE_GAME_TEAM_SIZE = 2;
+    private static final Team team = new Team(SIMPLAE_GAME_TEAM_SIZE);
 
     public static void index() {
         render();
@@ -22,8 +27,11 @@ public class Application extends Controller {
     	render(myName);
     }
 
-    public static void giveMyTeam() {
-        Integer playerNumber = 1;
+    public static void giveMyTeam(String userName) {
+        Player player = new Player(userName);
+        team.addPlayerToTeam(player);
+
+        int playerNumber = team.getPlayerNumberFor(player);
         render(playerNumber);
     }
 
