@@ -30,9 +30,9 @@
 
 
 open('/giveMyTeam?userName=player1')
-assertTextPresent('1')
+assertTextPresent('{"teamId": "team0", "playerNumber": 1}')
 
 open('/giveMyTeam?userName=player2')
-assertTextPresent('2')
+assertTextPresent('{"teamId": "team0", "playerNumber": 2}')
 
 #{/selenium}

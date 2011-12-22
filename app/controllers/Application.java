@@ -32,7 +32,8 @@ public class Application extends Controller {
         team.addPlayerToTeam(player);
 
         int playerNumber = team.getPlayerNumberFor(player);
-        render(playerNumber);
+        String teamId = team.getTeamId();
+        render(teamId, playerNumber);
     }
 
     public static class WebSocket extends WebSocketController
